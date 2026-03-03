@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Store-Book</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">Store Book</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <form class="d-flex">
+            <input class="form-control me-2" type="search" placeholder="Title, Author..." aria-label="Search">
+            <button class="btn btn-outline-success" type="submit">Search</button>
+        </form>
+        <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="filterDropdown" role="button" 
+                data-bs-toggle="dropdown" aria-expanded="false">
+                Filter By
+            </a>
+            <ul class="dropdown-menu p-3" aria-labelledby="filterDropdown" style="min-width: 250px;">
+                
+                <!-- Genre -->
+                <li>
+                <h6 class="dropdown-header">Genre</h6>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="fiction" id="fictionCheck">
+                    <label class="form-check-label" for="fictionCheck">
+                    Fiction
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="nonfiction" id="nonFictionCheck">
+                    <label class="form-check-label" for="nonFictionCheck">
+                    Non-Fiction
+                    </label>
+                </div>
+                </li>
+
+                <li><hr class="dropdown-divider"></li>
+
+                <!-- Age Rating -->
+                <li>
+                <h6 class="dropdown-header">Age Rating</h6>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="children" id="childrenCheck">
+                    <label class="form-check-label" for="childrenCheck">
+                    Children (0–12)
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="teen" id="teenCheck">
+                    <label class="form-check-label" for="teenCheck">
+                    Teen (13–17)
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="adult" id="adultCheck">
+                    <label class="form-check-label" for="adultCheck">
+                    Adult (18+)
+                    </label>
+                </div>
+                </li>
+
+                <li><hr class="dropdown-divider"></li>
+
+                <!-- Availability Toggle -->
+                <li>
+                <h6 class="dropdown-header">Availability</h6>
+                <div class="form-check form-switch">
+                    <input class="form-check-input" type="checkbox" id="availabilityToggle">
+                    <label class="form-check-label" for="availabilityToggle">
+                    Available Only
+                    </label>
+                </div>
+                </li>
+
+                <li><hr class="dropdown-divider"></li>
+
+                <!-- Apply Button -->
+                <li class="text-center">
+                <button class="btn btn-sm btn-primary w-100 mt-2">Apply Filters</button>
+                </li>
+
+            </ul>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Sort By
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+            
+            <!-- Alphabetical -->
+            <li><a class="dropdown-item fw-bold" href="#">Alphabetical</a></li>
+            <li>
+                <a class="dropdown-item" href="#" data-sort="title-asc">
+                    A - Z
+                </a>
+            </li>
+            <li>
+                <a class="dropdown-item" href="#" data-sort="title-desc">
+                    Z - A
+                </a>
+            </li>
+
+            <li><hr class="dropdown-divider"></li>
+
+            <!-- Data Published -->
+            <li><a class="dropdown-item fw-bold" href="#">Date published</a></li>
+            <li>
+                <a class="dropdown-item" href="#" data-sort="date-desc">
+                    Newest First
+                </a>
+            </li>  
+            <li>
+                <a class="dropdown-item" href="#" data-sort="date-asc">
+                    Oldest First
+                </a>
+            </li>         
+        </ul>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+    
+</body>
+</html>
