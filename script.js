@@ -2,6 +2,7 @@ const minusButton = document.getElementById('minus');
 const plusButton = document.getElementById('plus');
 const inputField = document.getElementById('input');
 
+
 minusButton.addEventListener('click', event => {
   event.preventDefault();
   const currentValue = Number(inputField.value) || 0;
@@ -13,7 +14,7 @@ plusButton.addEventListener('click', event => {
   const currentValue = Number(inputField.value) || 0;
   inputField.value = currentValue + 1;
 });
-searchBar = document.querySelector("#searchBar")
+const searchBar = document.querySelector("#searchBar")
 
 searchBar.addEventListener("submit", bookSearch)
 
@@ -31,3 +32,13 @@ function bookSearch(e) {
         }
     }
 }   
+
+document.querySelectorAll(".bookItem").forEach(book => {
+    const link = book.querySelector(".bookLink");
+
+    if (link) {
+        const title = book.querySelector(".bookTitle").textContent;
+        link.href = "Ullycheckout.html?title=" + encodeURIComponent(title);
+    }
+});
+
