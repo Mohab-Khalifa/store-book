@@ -6,6 +6,8 @@
     <title>Store-Book</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
 </head>
 <body>
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
@@ -16,8 +18,8 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-        <form class="d-flex">
-            <input class="form-control me-2" type="search" placeholder="Title, Author..." aria-label="Search" id="searchBar">
+        <form class="d-flex" id="searchBar">
+            <input class="form-control me-2" type="search" placeholder="Title, Author..." aria-label="Search" id="searchInput">
             <button class="btn btn-outline-success" type="submit">Search</button>
         </form>
         <li class="nav-item dropdown">
@@ -130,6 +132,113 @@
     </div>
   </div>
 </nav>
+
+<section id="book">
+
+    <ul>
+        <li class="bookItem" id="book001">
+            <h3 class="bookTitle">Eragon</h3>
+            <h4 class="Author">Christopher Paolini</h4>
+            <p class="releaseYear">2002</p>
+            <p class="genres">Fantasy</p>
+            <p class="fictionOrNon">Fiction</p>
+            <P class="ageRating">Teen</P>
+            <p class="Number of copies">3</p>
+            <p class="bookLocation">F-G12</p>
+        </li>
+        <li class="bookItem" id="book002">
+            <h3 class="bookTitle">University Physics with Modern Physics</h3>
+            <h4 class="Author">Hugh D. Young</h4>
+            <p class="releaseYear">2019</p>
+            <p class="genres">Education</p>
+            <p class="fictionOrNon">Non-Fiction</p>
+            <p class="ageRating">Teen</p>
+            <p class="Number of copies">1</p>
+            <p class="bookLocation">NF-K08</p>
+        </li>
+        <li class="bookItem" id="book003">
+            <h3 class="bookTitle">Atomic Habbits</h3>
+            <h4 class="Author">James Clear</h4>
+            <p class="releaseYear">2018</p>
+            <p class="genres">Self help</p>
+            <p class="fictionOrNon">Non-Fiction</p>
+            <p class="ageRating">Teen</p>
+            <p class="Number of copies">3</p>
+            <p class="bookLocation">NF-G25</p>
+        </li>
+        <li class="bookItem" id="book004">
+            <h3 class="bookTitle">A Little Life</h3>
+            <h4 class="Author">Hanya Yanagihara</h4>
+            <p class="releaseYear">2015</p>
+            <p class="genres">Drama</p>
+            <p class="fictionOrNon">Fiction</p>
+            <p class="ageRating">Adult</p>
+            <p class="Number of copies">1</p>
+            <p class="bookLocation">NF-K08</p>
+        </li>
+        <li class="bookItem" id="book005">
+            <h3 class="bookTitle">Lord of the Rings</h3>
+            <h4 class="Author">J R. R. Tolkien</h4>
+            <p class="releaseYear">1954</p>
+            <p class="genres">Fantasy</p>
+            <p class="fictionOrNon">Fiction</p>
+            <p class="ageRating">Teen</p>
+            <p class="Number of copies">5</p>
+            <p class="bookLocation">F-D07</p>
+        </li>
+        <li class="bookItem" id="book006">
+            <h3 class="bookTitle">Fourth Wing</h3>
+            <h4 class="Author">Rebecca Yarros</h4>
+            <p class="releaseYear">2019</p>
+            <p class="genres">Education</p>
+            <p class="fictionOrNon">Fiction</p>
+            <p class="ageRating">Adult</p>
+            <p class="Number of copies">2</p>
+            <p class="bookLocation">F-U19</p>
+        </li>
+        <li class="bookItem" id="book007">
+            <h3 class="bookTitle">6 Easy Pieces</h3>
+            <h4 class="Author">Richard Feynman</h4>
+            <p class="releaseYear">1994</p>
+            <p class="genres">Education</p>
+            <p class="fictionOrNon">Non-Fiction</p>
+            <p class="ageRating">Teen</p>
+            <p class="Number of copies">4</p>
+            <p class="bookLocation">NF-A03</p>
+        </li>
+        <li class="bookItem" id= "book008">
+            <h3 class="bookTitle">Game of Thrones</h3>
+            <h4 class="Author">George R. R. Martin</h4>
+            <p class="releaseYear">1991</p>
+            <p class="genres">Fantasy</p>
+            <p class="fictionOrNon">Fiction</p>
+            <P class="ageRating">Adult</P>
+            <p class="Number of copies">5</p>
+            <p class="bookLocation">F-G45</p>
+        </li>
+        <li class="bookItem" id= "book009">
+            <h3 class="bookTitle">Storm of Swords</h3>
+            <h4 class="Author">George R. R. Martin</h4>
+            <p class="releaseYear">2000</p>
+            <p class="genres">Fantasy</p>
+            <p class="fictionOrNon">Fiction</p>
+            <p class="ageRating">Adult</p>
+            <p class="Number of copies">2</p>
+            <p class="bookLocation">F-S20</p>
+        </li>
+        <li class="bookItem" id= "book010">
+            <h3 class="bookTitle">Ikigai</h3>
+            <h4 class="Author">Hector Garcia</h4>
+            <p class="releaseYear">2016</p>
+            <p class="genres">Self Help</p>
+            <p class="fictionOrNon">Non - Fiction</p>
+            <p class="ageRating">Teen</p>
+            <p class="Number of copies">8</p>
+            <p class="bookLocation">NF-G1</p>
+        </li>
+    </ul>
+
+</section>
 
 
 

@@ -1,17 +1,18 @@
+searchBar = document.querySelector("#searchBar")
 
-e.addEventListener("submit", bookSearch)
+searchBar.addEventListener("submit", bookSearch)
 
-function searchEvent (){
-
-}
 
 function bookSearch(e) {
-    searchString = e.target.searchBar.value
+    e.preventDefault()
+    searchString = e.target.searchInput.value
+    console.log(searchString);
     const books = document.querySelectorAll(".bookItem")
-    books.style.display = "none"
+    console.log(books);
     for (let i=0;i<books.length;i++) {
-        if (books[i].includes(searchString)){
-            books[i].style.display = "flex"
+        books[i].style.display = "none"
+        if ((books[i].innerHTML.toLocaleLowerCase()).includes(searchString.toLowerCase())){
+            books[i].style.display = "inline"
         }
     }
-}
+}   
