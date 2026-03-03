@@ -4,6 +4,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="style.css">   
+    <script src="checkoutScript.js" defer></script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Checkout page</title>
@@ -12,12 +13,11 @@
 
 <nav class="navbar sticky-top bs-tertiary-color">
     <div class="container-fluid">
-        <a class="navbar-brand" href="#">Return to book search</a>
+        <a class="navbar-brand" href="index.html">Return to book search</a>
     </div>
 </nav>
 <div class="checkout-text">
-<h3>Book Name</h3>
-<p>Book Info</p>
+<h3 id="book-name">Book Name</h3>
 
 <form>
   <div class="row mb-3">
@@ -33,6 +33,7 @@
     </div>
   </div>
   <div>
+    <p id="return-date">The customer must return the book within 1 month</p>
     <p id="return-date">The Customer must return the book within a month.</p>
   </div>
 

@@ -2,6 +2,21 @@
 // const plusButton = document.getElementById('plus');
 // const inputField = document.getElementById('input');
 
+
+
+minusButton.addEventListener('click', event => {
+  event.preventDefault();
+  const currentValue = Number(inputField.value) || 0;
+  inputField.value = currentValue - 1;
+});
+
+plusButton.addEventListener('click', event => {
+  event.preventDefault();
+  const currentValue = Number(inputField.value) || 0;
+  inputField.value = currentValue + 1;
+});
+const searchBar = document.querySelector("#searchBar")
+
 // minusButton.addEventListener('click', event => {
 //   event.preventDefault();
 //   const currentValue = Number(inputField.value) || 0;
@@ -15,6 +30,7 @@
 // });
 
 searchBar = document.querySelector("#searchBar")
+
 
 searchBar.addEventListener("submit", bookSearch)
 
@@ -33,6 +49,16 @@ function bookSearch(e) {
         }
     }
 }   
+
+document.querySelectorAll(".bookItem").forEach(book => {
+    const link = book.querySelector(".bookLink");
+
+    if (link) {
+        const title = book.querySelector(".bookTitle").textContent;
+        link.href = "Ullycheckout.html?title=" + encodeURIComponent(title);
+    }
+});
+
 
 // FICTION / NON-FICTION FILTER
 const fictionCheck = document.querySelector("#fictionCheck");
