@@ -29,7 +29,7 @@ const searchBar = document.querySelector("#searchBar")
 //   inputField.value = currentValue + 1;
 // });
 
-searchBar = document.querySelector("#searchBar")
+const searchBar = document.querySelector("#searchBar")
 
 
 searchBar.addEventListener("submit", bookSearch)
