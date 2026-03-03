@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Store-Book</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">Store Book</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <form class="d-flex" id="searchBar">
+            <input class="form-control me-2" type="search" placeholder="Title, Author..." aria-label="Search" id="searchInput">
+            <button class="btn btn-outline-success" type="submit">Search</button>
+        </form>
+        <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="filterDropdown" role="button" 
+                data-bs-toggle="dropdown" aria-expanded="false">
+                Filter By
+            </a>
+            <ul class="dropdown-menu p-3" aria-labelledby="filterDropdown" style="min-width: 250px;">
+                
+                <!-- Genre -->
+                <li>
+                <h6 class="dropdown-header">Genre</h6>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="fiction" id="fictionCheck">
+                    <label class="form-check-label" for="fictionCheck">
+                    Fiction
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="nonfiction" id="nonFictionCheck">
+                    <label class="form-check-label" for="nonFictionCheck">
+                    Non-Fiction
+                    </label>
+                </div>
+                </li>
+
+                <li><hr class="dropdown-divider"></li>
+
+                <!-- Age Rating -->
+                <li>
+                <h6 class="dropdown-header">Age Rating</h6>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="children" id="childrenCheck">
+                    <label class="form-check-label" for="childrenCheck">
+                    Children (0–12)
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="teen" id="teenCheck">
+                    <label class="form-check-label" for="teenCheck">
+                    Teen (13–17)
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="adult" id="adultCheck">
+                    <label class="form-check-label" for="adultCheck">
+                    Adult (18+)
+                    </label>
+                </div>
+                </li>
+
+                <li><hr class="dropdown-divider"></li>
+
+                <!-- Availability Toggle -->
+                <li>
+                <h6 class="dropdown-header">Availability</h6>
+                <div class="form-check form-switch">
+                    <input class="form-check-input" type="checkbox" id="availabilityToggle">
+                    <label class="form-check-label" for="availabilityToggle">
+                    Available Only
+                    </label>
+                </div>
+                </li>
+
+                <li><hr class="dropdown-divider"></li>
+
+                <!-- Apply Button -->
+                <li class="text-center">
+                <button class="btn btn-sm btn-primary w-100 mt-2">Apply Filters</button>
+                </li>
+
+            </ul>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Sort By
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+            
+            <!-- Alphabetical -->
+            <li><a class="dropdown-item fw-bold" href="#">Alphabetical</a></li>
+            <li>
+                <a class="dropdown-item" href="#" data-sort="title-asc">
+                    A - Z
+                </a>
+            </li>
+            <li>
+                <a class="dropdown-item" href="#" data-sort="title-desc">
+                    Z - A
+                </a>
+            </li>
+
+            <li><hr class="dropdown-divider"></li>
+
+            <!-- Data Published -->
+            <li><a class="dropdown-item fw-bold" href="#">Date published</a></li>
+            <li>
+                <a class="dropdown-item" href="#" data-sort="date-desc">
+                    Newest First
+                </a>
+            </li>  
+            <li>
+                <a class="dropdown-item" href="#" data-sort="date-asc">
+                    Oldest First
+                </a>
+            </li>         
+        </ul>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<section id="book">
+
+    <ul>
+        <li class="bookItem" id="book001">
+            <h3 class="bookTitle">Eragon</h3>
+            <h4 class="Author">Christopher Paolini</h4>
+            <p class="releaseYear">2002</p>
+            <p class="genres">Fantasy</p>
+            <p class="fictionOrNon">Fiction</p>
+            <P class="ageRating">Teen</P>
+            <p class="Number of copies">3</p>
+            <p class="bookLocation">F-G12</p>
+        </li>
+        <li class="bookItem" id="book002">
+            <h3 class="bookTitle">University Physics with Modern Physics</h3>
+            <h4 class="Author">Hugh D. Young</h4>
+            <p class="releaseYear">2019</p>
+            <p class="genres">Education</p>
+            <p class="fictionOrNon">Non-Fiction</p>
+            <p class="ageRating">Teen</p>
+            <p class="Number of copies">1</p>
+            <p class="bookLocation">NF-K08</p>
+        </li>
+        <li class="bookItem" id="book003">
+            <h3 class="bookTitle">Atomic Habbits</h3>
+            <h4 class="Author">James Clear</h4>
+            <p class="releaseYear">2018</p>
+            <p class="genres">Self help</p>
+            <p class="fictionOrNon">Non-Fiction</p>
+            <p class="ageRating">Teen</p>
+            <p class="Number of copies">3</p>
+            <p class="bookLocation">NF-G25</p>
+        </li>
+        <li class="bookItem" id="book004">
+            <h3 class="bookTitle">A Little Life</h3>
+            <h4 class="Author">Hanya Yanagihara</h4>
+            <p class="releaseYear">2015</p>
+            <p class="genres">Drama</p>
+            <p class="fictionOrNon">Fiction</p>
+            <p class="ageRating">Adult</p>
+            <p class="Number of copies">1</p>
+            <p class="bookLocation">NF-K08</p>
+        </li>
+        <li class="bookItem" id="book005">
+            <h3 class="bookTitle">Lord of the Rings</h3>
+            <h4 class="Author">J R. R. Tolkien</h4>
+            <p class="releaseYear">1954</p>
+            <p class="genres">Fantasy</p>
+            <p class="fictionOrNon">Fiction</p>
+            <p class="ageRating">Teen</p>
+            <p class="Number of copies">5</p>
+            <p class="bookLocation">F-D07</p>
+        </li>
+        <li class="bookItem" id="book006">
+            <h3 class="bookTitle">Fourth Wing</h3>
+            <h4 class="Author">Rebecca Yarros</h4>
+            <p class="releaseYear">2019</p>
+            <p class="genres">Education</p>
+            <p class="fictionOrNon">Fiction</p>
+            <p class="ageRating">Adult</p>
+            <p class="Number of copies">2</p>
+            <p class="bookLocation">F-U19</p>
+        </li>
+        <li class="bookItem" id="book007">
+            <h3 class="bookTitle">6 Easy Pieces</h3>
+            <h4 class="Author">Richard Feynman</h4>
+            <p class="releaseYear">1994</p>
+            <p class="genres">Education</p>
+            <p class="fictionOrNon">Non-Fiction</p>
+            <p class="ageRating">Teen</p>
+            <p class="Number of copies">4</p>
+            <p class="bookLocation">NF-A03</p>
+        </li>
+        <li class="bookItem" id= "book008">
+            <h3 class="bookTitle">Game of Thrones</h3>
+            <h4 class="Author">George R. R. Martin</h4>
+            <p class="releaseYear">1991</p>
+            <p class="genres">Fantasy</p>
+            <p class="fictionOrNon">Fiction</p>
+            <P class="ageRating">Adult</P>
+            <p class="Number of copies">5</p>
+            <p class="bookLocation">F-G45</p>
+        </li>
+        <li class="bookItem" id= "book009">
+            <h3 class="bookTitle">Storm of Swords</h3>
+            <h4 class="Author">George R. R. Martin</h4>
+            <p class="releaseYear">2000</p>
+            <p class="genres">Fantasy</p>
+            <p class="fictionOrNon">Fiction</p>
+            <p class="ageRating">Adult</p>
+            <p class="Number of copies">2</p>
+            <p class="bookLocation">F-S20</p>
+        </li>
+        <li class="bookItem" id= "book010">
+            <h3 class="bookTitle">Ikigai</h3>
+            <h4 class="Author">Hector Garcia</h4>
+            <p class="releaseYear">2016</p>
+            <p class="genres">Self Help</p>
+            <p class="fictionOrNon">Non - Fiction</p>
+            <p class="ageRating">Teen</p>
+            <p class="Number of copies">8</p>
+            <p class="bookLocation">NF-G1</p>
+        </li>
+    </ul>
+
+</section>
+
+
+
+        <footer style="position: fixed; bottom: 0; left: 0; width: 100%; background-color: #F2EEEE; color: black; text-align: center; padding: 1rem;">
+        <table class="tab-style">
+            <thead class="foot-head" style="font-size: 5vh; float: left;">
+               <tr>
+                  <th>Store Book</th>
+               </tr>
+            </thead>
+            <tbody class="tab-bod" style="float: right;">
+               <tr>
+                  <td class="td-row" style="padding-left: 50px;">Sitmeap</td>
+                  <td class="td-row" style="padding-left: 50px;">Contact</td>
+                  <td class="td-row" style="padding-left: 50px;">About</td>
+               </tr>
+               <tr>
+                  <td class="td-row" style="padding-left: 50px;">Accessibility</td>
+                  <td class="td-row" style="padding-left: 50px;">FAQs</td>
+                  <td class="td-row" style="padding-left: 50px;">Policy</td>
+               </tr>
+            </tbody>
+         </table>
+        </footer>
+</body>
+</html>
